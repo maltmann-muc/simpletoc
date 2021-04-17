@@ -146,6 +146,10 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])('sim
     max_level: {
       type: 'integer',
       default: 6
+    },
+    min_level: {
+      type: 'integer',
+      default: 2
     }
   },
   edit: function edit(props) {
@@ -185,6 +189,16 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])('sim
           add_smooth: !props.attributes.add_smooth
         });
       }
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RangeControl"], {
+      label: "Columns",
+      value: props.attributes.max_level,
+      onChange: function onChange(level) {
+        return props.setAttributes({
+          max_level: Number(level)
+        });
+      },
+      min: 1,
+      max: 6
     })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["SelectControl"], {
       label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])("Maximum Level", 'simpletoc'),
       help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Maximum depth of the headings.', 'simpletoc'),
@@ -208,6 +222,34 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])('sim
       onChange: function onChange(level) {
         return props.setAttributes({
           max_level: Number(level)
+        });
+      }
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["SelectControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])("Minimum Level", 'simpletoc'),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Minimum depth of the headings.', 'simpletoc'),
+      value: props.attributes.min_level,
+      options: [{
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Including', 'simpletoc') + ' H6',
+        value: '6'
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Including', 'simpletoc') + ' H5',
+        value: '5'
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Including', 'simpletoc') + ' H4',
+        value: '4'
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Including', 'simpletoc') + ' H3',
+        value: '3'
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Including', 'simpletoc') + ' H2 (' + Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Default', 'simpletoc') + ')',
+        value: '2'
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Including', 'simpletoc') + ' H1',
+        value: '1'
+      }],
+      onChange: function onChange(level) {
+        return props.setAttributes({
+          min_level: Number(level)
         });
       }
     }))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["BlockControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["ToolbarGroup"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["ToolbarButton"], {

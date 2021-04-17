@@ -86,6 +86,10 @@ function register_block() {
           'type' => 'integer',
           'default' => 6,
         ),
+        'min_level' => array(
+          'type' => 'integer',
+          'default' => 2,
+        ),
         'use_absolute_urls' => array(
           'type' => 'boolean',
           'default' => false,
@@ -294,6 +298,11 @@ function generateToc($headings,$attributes) {
 
     // skip this heading because a max depth is set.
     if( $this_depth > $attributes['max_level'] ){
+      continue;
+    }
+
+    // skip this heading because a min depth is set.
+    if( $this_depth < $attributes['min_level'] ){
       continue;
     }
 
