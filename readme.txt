@@ -4,11 +4,11 @@ Tags: AMP, Gutenberg, block, TOC, Table of Contents
 Requires at least: 5.0
 Donate link: https://marc.tv/out/donate
 Tested up to: 5.7
-Stable tag: 4.5
+Stable tag: 4.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds a custom Table of Contents Gutenberg block.
+Adds a valid HTML Table of Contents Gutenberg block without JavaScript.
 
 == Description ==
 
@@ -47,8 +47,6 @@ Hide the headline "Table of Contents" and set a maximum display depth in the blo
 * Feature: Added option to toggle absolute urls. 
 
 = 4.4.7 =
-* Fix: Heading ids won't be added to all posts anymore. 
-* Fix: Headings with attributes like align-center will now appear in your TOC. 
 * Feature: Added option to replace ul tag with ol tag. This will add decimal numbers to each heading in the TOC.
 * Feature: Works in nested blockes. This means support for column block layouts. 
 
